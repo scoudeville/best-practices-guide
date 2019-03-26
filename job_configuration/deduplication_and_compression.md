@@ -111,7 +111,7 @@ Add-PSSnapIn VeeamPSSnapin;
 
 Foreach ($job in Get-VBRJob) {
   $job.Options.ViSourceOptions.DirtyBlocksNullingEnabled = $true;
-  $job.SetOptions($job.Options)
+  Set-VBRJobOptions $job $job.Options
 }
 ~~~
 
